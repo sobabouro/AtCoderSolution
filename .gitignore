@@ -5,5 +5,7 @@
 
 ac-library/**
 
+apg4b/
+
 *.in
 *.out

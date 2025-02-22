@@ -2,32 +2,24 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build",
+            "label": "c++ build for AtCoder",
             "type": "shell",
             "options": {
-                "shell": {
-                    "executable": "C:\\Windows\\System32\\wsl.exe",
-                }
+                "cwd": "${fileDirname}"
             },
             "command": "g++",
             "args": [
-                "-std=gnu++1y",
+                "-I",
+                "${workspaceFolder}/ac-library/",
                 "-g",
                 "-O0",
-                "-I/opt/boost/gcc/include",
-                "-L/opt/boost/gcc/lib",
+                "-Wall",
+                "-Wextra",
+                "${file}",
                 "-o",
-                "`wslpath",
-                "'${workspaceFolder}\\problem.exe'`",
-                "`wslpath",
-                "'${file}'`",
-				"-I",
-				"${workspaceFolder}/ac-library/",
+                "${workspaceFolder}/a.out"
             ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
+            "group": "build"
         }
     ]
 }
